@@ -237,7 +237,7 @@ margin-bottom: 10px;}
     margin: 16px;
     min-height: 100px; }
     #file-upload .dz-preview:hover {
-      z-index: 1000; }
+      z-home: 1000; }
       #file-upload .dz-preview:hover .dz-details {
         opacity: 1; }
     #file-upload .dz-preview.dz-file-preview .dz-image {
@@ -265,7 +265,7 @@ margin-bottom: 10px;}
     #file-upload .dz-preview:hover .dz-details {
       opacity: 1; }
     #file-upload .dz-preview .dz-details {
-      z-index: 20;
+      z-home: 20;
       position: absolute;
       top: 0;
       left: 0;
@@ -309,7 +309,7 @@ margin-bottom: 10px;}
       height: 120px;
       position: relative;
       display: block;
-      z-index: 10; }
+      z-home: 10; }
       #file-upload .dz-preview .dz-image img {
         display: block; }
     #file-upload .dz-preview.dz-success .dz-success-mark {
@@ -328,7 +328,7 @@ margin-bottom: 10px;}
     #file-upload .dz-preview .dz-success-mark, #file-upload .dz-preview .dz-error-mark {
       pointer-events: none;
       opacity: 0;
-      z-index: 500;
+      z-home: 500;
       position: absolute;
       display: block;
       top: 50%;
@@ -361,7 +361,7 @@ margin-bottom: 10px;}
       animation: pulse 6s ease infinite; }
     #file-upload .dz-preview .dz-progress {
       opacity: 1;
-      z-index: 1000;
+      z-home: 1000;
       pointer-events: none;
       position: absolute;
       height: 16px;
@@ -394,7 +394,7 @@ margin-bottom: 10px;}
       pointer-events: auto; }
     #file-upload .dz-preview .dz-error-message {
       pointer-events: none;
-      z-index: 1000;
+      z-home: 1000;
       position: absolute;
       display: block;
       display: none;

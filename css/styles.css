@@ -10,7 +10,7 @@
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
+  background-color: #53C0FB; 
   background: url('../img/cover_back.png');
   background-size: cover;
   background-position: center;
@@ -126,7 +126,7 @@ footer p {
   height: 100%;
   top:0;
   left:0;
-  z-index: 1021;
+  z-home: 1021;
   display: none;
 }
 
