@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function (e){
                                                      <small class="text-muted">` + moneda + " " + costo + `</small>
                                                  </div>
                                                  <div><p class="mb-1">` + descripcion + `</p></div>
-                                                 <div><p class="mb-2">`+"Cantidad vendida: " + cantvendido + `</p small></div>
-                                             </div>
+                                            </div>
                                        </div>
                         `
                         
