@@ -11,9 +11,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         
         if (usuario != " " && contraseña != " ") {
 
-            localStorage.setItem("usuario", usuario)
-            window.location.href = "./home.html";
-
+            localStorage.setItem("usuario", usuario);
+            
         }
         
         

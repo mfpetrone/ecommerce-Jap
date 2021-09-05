@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             relevancia += `
                   <div class="list-group-item list-group-item-action">
-                       <div class="row">
+                       <div class="row" >
                            <div class="col-3">
                                <img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail">
                            </div>
