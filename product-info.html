@@ -23,15 +23,60 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="py-2 d-none d-md-inline-block" name= usuario id= usuariologueadoproductinfo style=color:white> </div>
+      <div class="py-2 d-none d-md-inline-block" name=usuario id=usuariologueado style=color:white> </div>
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará la presente: <strong>Chevrolet Onix Joy</strong>.</p>
+      </div>
+
+      <div class="row">
+        <div class="list-group" id="productoinfo-list-container">
+          <!-- es para traer los datos de los productos-->
+        </div>
+      </div>
+
+      <h5><strong>Comentarios</strong></h5>
+      <br>
+      
+      <div id="cometariospersonas">
+        <!-- para traer los comentarios de json-->
+      </div>
+
+      <!-- <div id="comentarionuevo">
+      </div> -->
+
+      <form>
+        <p><strong><u>Su opinión es de gran importancia:</u></strong></p>
+        <!-- <p>Usuario:</p> 
+      <div id="usuariolog"><strong></strong></div> -->
+        <p><strong>Calificación:</strong>
+          <select name="puntos" id="puntos">
+            <option value="a">1</option>
+            <option value="b">2</option>
+            <option value="c">3</option>
+            <option value="d">4</option>
+            <option value="e">5</option>
+          </select>
+          <span class="fa fa-star checked"></span>
+        </p>
+
+        <textarea name="comentarios" id="comentario" rows="5" cols="30">Escribe aquí tu comentario</textarea>
+        <br>
+        <button type="submit" id="envioopinion">Comentar</button>
+
+      </form>
+
+      <!--<div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+        <h4 class="alert-heading">¡A trabajar! :)</h4>
+        <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
+        <hr>
+        <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p> -->
     </div>
   </div>
   <footer class="text-muted">

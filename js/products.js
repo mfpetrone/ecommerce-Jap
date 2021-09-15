@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let imagen = auto.imgSrc;
                 let cantvendido = auto.soldCount;
 
-
+                //linea 24 agregue etiqueta a para que direccione al html product-info
                 document.getElementById("producto-list-container").innerHTML += `
                     <div class="list-group-item list-group-item-action">
                          <div class="row">
-                             <div class="col-3">
-                                 <img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail">
+                             <div class="col-3"> 
+                             <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
                              </div>
                              <div class="col">
                                  <div class="d-flex w-100 justify-content-between">
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     <div class="list-group-item list-group-item-action">
                          <div class="row">
                              <div class="col-3">
-                                 <img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail">
+                             <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
                              </div>
                              <div class="col">
                                  <div class="d-flex w-100 justify-content-between">
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             });
 
         document.getElementById("limpiarrango").onclick = function () {
-            window.location.href ="./products.html";
+            window.location.href = "./products.html";
         }
 
 
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="list-group-item list-group-item-action">
                        <div class="row" >
                            <div class="col-3">
-                               <img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail">
+                           <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
                            </div>
                            <div class="col">
                                <div class="d-flex w-100 justify-content-between">
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="list-group-item list-group-item-action">
                        <div class="row">
                            <div class="col-3">
-                               <img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail">
+                           <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
                            </div>
                            <div class="col">
                                <div class="d-flex w-100 justify-content-between">
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                   <div class="list-group-item list-group-item-action">
                        <div class="row">
                            <div class="col-3">
-                               <img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail">
+                           <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
                            </div>
                            <div class="col">
                                <div class="d-flex w-100 justify-content-between">

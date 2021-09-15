@@ -42,34 +42,7 @@ var getJSONData = function (url) {
 
 document.addEventListener("DOMContentLoaded", function (e) {
   let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadohome").innerHTML += agregarusuario;
+  document.getElementById("usuariologueado").innerHTML += agregarusuario;
 });
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadoproducts").innerHTML += agregarusuario;
-});
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadocategories").innerHTML += agregarusuario;
-});
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadosell").innerHTML += agregarusuario;
-});
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadocart").innerHTML += agregarusuario;
-});
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadomyprofile").innerHTML += agregarusuario;
-});
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadocategory").innerHTML += agregarusuario;
-});
-document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueadoproductinfo").innerHTML += agregarusuario;
-});
+
 
