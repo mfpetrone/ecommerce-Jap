@@ -41,8 +41,23 @@ var getJSONData = function (url) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  let agregarusuario = localStorage.getItem("usuario")
-  document.getElementById("usuariologueado").innerHTML += agregarusuario;
+  let agregarusuario = localStorage.getItem("usuario") 
+  document.getElementById("usuariologueado").innerHTML = `
+      <ul>
+          <li> `+ agregarusuario + `   
+          
+          
+               <ul>
+                  <li> <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> </li>
+                  <li> <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Mi perfil</a> </li>
+                  <li> <a class="py-2 d-none d-md-inline-block" href="index.html" id=usuariocierre >Cerrar sesión</a> </li>
+                </ul>
+          </li>  
+      </ul>`;
+  
+  document.getElementById("usuariocierre").onclick = function () {
+    let usuarios = ""
+    localStorage.setItem("usuario", usuarios)
+    document.getElementById("usuariologueado").innerHTML = usuarios
+  }
 });
-
-

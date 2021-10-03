@@ -139,3 +139,40 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+ nav ul {
+  float: left;
+  display: flex;
+}
+
+nav ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+}
+
+nav  ul li a {
+  display: block;
+  text-decoration: none;
+} 
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #212529;
+  border: 1px solid grey;
+
+}
+nav ul li:hover ul {
+  display: block;
+}
+
+
+nav ul li ul li a {
+  width: 110px ;
+  line-height: unset;
+  white-space: nowrap;
+}
+
+nav ul li ul li a:hover {
+  background-color: gray;
+} 

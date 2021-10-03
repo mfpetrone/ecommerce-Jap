@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             localStorage.setItem("usuario", usuario);
             
-        }
-        
-        
-
-    }
-
+       };
+    };
 });
  

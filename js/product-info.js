@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         .then(response => response.json())
         .then(data => {
             //console.log(data)
-            let imagenes= []
-            
+            let imagenes = []
+
             //console.log("abc")
             let nombre = data.name
             let descripcion = data.description
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let moneda = data.currency
             let cantvenida = data.soldCount
             let categoria = data.category
-            let images = data.images 
-                for (let i =0 ; i < images.length; i++){
-                    let imagen = images[i] 
+            let images = data.images
+            for (let i = 0; i < images.length; i++) {
+                let imagen = images[i]
                 //console.log(imagen)
-                    
-                    
+
+
                 imagenes += `<img style="height:160px;width:190px;" src="` + imagen + `" alt=" " class="img-thumbnail"></img> `
                 //console.log(imagenes)
 
@@ -50,7 +50,41 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     `
 
 
+
                 document.getElementById("productoinfo-list-container").innerHTML = productoselect
+
+            };
+            let relatedProducts = data.relatedProducts
+            for (let i = 0; i < relatedProducts.length; i++) {
+                let posicion = relatedProducts[i]
+                //console.log(posicion)
+                fetch(PRODUCTS_URL)
+                    .then(response => response.json())
+                    .then(data => { //traer nombre y foto
+                        let autorelacionado = data[posicion].name
+                        //console.log(autorelacionado)
+                        let monedarelacionada = data[posicion].currency
+                        let costorelacionada = data[posicion].cost
+                        let imagenrelacionada = data[posicion].imgSrc
+
+                        document.getElementById("producto-relacionado").innerHTML += `
+                   
+                            <div class="list-group-item list-group-item-action">
+                                 <div class="row">
+                                    <div class="col-3"> 
+                                     <img src="` + imagenrelacionada + `" alt="  " class="img-thumbnail">                                    </div>
+                                 <div class="col">
+                                    <div class="d-flex w-100 justify-content-between">
+                                     <h4 class="mb-1">`+ autorelacionado + `</h4>
+                                     <small class="text-muted">` + monedarelacionada + " " + costorelacionada + `</small>
+                                </div>
+                                   
+                            </div>
+                        `
+
+                    });
+
+
             };
 
 
