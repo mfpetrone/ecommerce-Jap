@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         .then(response => response.json())
         .then(data => {
 
+
             for (let i = 0; i < data.length; i++) {
                 let auto = data[i]
                 listaproductos.push(auto)
@@ -16,27 +17,50 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let imagen = auto.imgSrc;
                 let cantvendido = auto.soldCount;
 
+
+
                 //linea 24 agregue etiqueta a para que direccione al html product-info
                 document.getElementById("producto-list-container").innerHTML += `
-                    <div class="list-group-item list-group-item-action">
-                         <div class="row">
-                             <div class="col-3"> 
-                             <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
-                             </div>
-                             <div class="col">
-                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">`+ nombre + `</h4>
-                                    <small class="text-muted">` + moneda + " " + costo + `</small>
-                             </div>
-                             <div><p class="mb-1">` + descripcion + `</p></div>
-                             <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
-                             </div>
-                         </div>
-                     `
+                    <div class="col-md-6">
+                        <div class="card mb-6 shadow-sm">
+                            <a title="producto" href="product-info.html"><img src="` + imagen + `" alt=" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></a>
+                            <div class="card-body">
+                                <h4 class="card-text">`+ nombre + `</h4>
+                                <p>` + moneda + " " + costo + `</p> 
+                                <p class="card-text">` + descripcion + `</p>
+                                <p class="card-text">`+ "Cantidad vendida: " + cantvendido + `</p>
+                                 
+                            </div>
+                        </div>
+                    </div> `
+
+                // esto era lo que tenia antes de cambiar a los cuadrados
+                //              <div >
+                //                  <div class="col-md-6 mb-3" > 
+                //                     <div class = "card mb-4 shadow-sm">
+                //                         <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
+
+                //                         <div class= "card-body" id="prueba">
+                //                             <div class="d-flex w-100 justify-content-between">
+                //                             <h4 class="card-text">`+ nombre + `</h4>
+
+                //                             </div>
+
+                //                             <div><p class="mb-1">` + descripcion + `</p></div>
+                //                             <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
+                //                             <div><small class="text-muted">` + moneda + " " + costo + `</small></div>
+                //                         </div>
+                //                     </div>
+                //                 </div>
+
+                //          `
 
 
             }
+            // document.getElementById("producto-list-container").innerHTML = prueba + "</div>"+ "</div>";
         });
+
+
 
     document.getElementById("rangoafiltrarbtn").onclick = function () {
         let min = document.getElementById("minimo").value;
@@ -62,21 +86,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
                     if (min <= costo && costo <= max) {
                         select += `
-                    <div class="list-group-item list-group-item-action">
-                         <div class="row">
-                             <div class="col-3">
-                             <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
-                             </div>
-                             <div class="col">
-                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">`+ nombre + `</h4>
-                                    <small class="text-muted">` + moneda + " " + costo + `</small>
-                             </div>
-                             <div><p class="mb-1">` + descripcion + `</p></div>
-                             <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
-                             </div>
-                         </div>
-                     `
+                        <div class="col-md-6">
+                            <div class="card mb-6 shadow-sm">
+                                <a title="producto" href="product-info.html"><img src="` + imagen + `" alt=" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></a>
+                                <div class="card-body">
+                                    <h4 class="card-text">`+ nombre + `</h4>
+                                    <p>` + moneda + " " + costo + `</p> 
+                                    <p class="card-text">` + descripcion + `</p>
+                                    <p class="card-text">`+ "Cantidad vendida: " + cantvendido + `</p>
+                                     
+                                </div>
+                            </div>
+                        </div> `
+                        
                         document.getElementById("producto-list-container").innerHTML = select
                     }
 
@@ -142,22 +164,36 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let cantvendido = auto.soldCount;
 
             relevancia += `
-                  <div class="list-group-item list-group-item-action">
-                       <div class="row" >
-                           <div class="col-3">
-                           <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
-                           </div>
-                           <div class="col">
-                               <div class="d-flex w-100 justify-content-between">
-                                  <h4 class="mb-1">`+ nombre + `</h4>
-                                  <small class="text-muted">` + moneda + " " + costo + `</small>
-                           </div>
-                           <div><p class="mb-1">` + descripcion + `</p></div>
-                           <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
-                           </div>
-                       </div>
+                <div class="col-md-6">
+                    <div class="card mb-6 shadow-sm">
+                        <a title="producto" href="product-info.html"><img src="` + imagen + `" alt=" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></a>
+                        <div class="card-body">
+                            <h4 class="card-text">`+ nombre + `</h4>
+                            <p>` + moneda + " " + costo + `</p> 
+                            <p class="card-text">` + descripcion + `</p>
+                            <p class="card-text">`+ "Cantidad vendida: " + cantvendido + `</p>
+                         
+                        </div>
+                    </div>
+                </div> `
+
+            // relevancia += `
+            //       <div class="list-group-item list-group-item-action">
+            //            <div class="row" >
+            //                <div class="col-3">
+            //                <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
+            //                </div>
+            //                <div class="col">
+            //                    <div class="d-flex w-100 justify-content-between">
+            //                       <h4 class="mb-1">`+ nombre + `</h4>
+            //                       <small class="text-muted">` + moneda + " " + costo + `</small>
+            //                </div>
+            //                <div><p class="mb-1">` + descripcion + `</p></div>
+            //                <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
+            //                </div>
+            //            </div>
           
-                      `
+            //           `
             document.getElementById("producto-list-container").innerHTML = relevancia
         }
     });
@@ -176,22 +212,36 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let cantvendido = auto.soldCount;
 
             descendenteprecio += `
-                  <div class="list-group-item list-group-item-action">
-                       <div class="row">
-                           <div class="col-3">
-                           <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
-                           </div>
-                           <div class="col">
-                               <div class="d-flex w-100 justify-content-between">
-                                  <h4 class="mb-1">`+ nombre + `</h4>
-                                  <small class="text-muted">` + moneda + " " + costo + `</small>
-                           </div>
-                           <div><p class="mb-1">` + descripcion + `</p></div>
-                           <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
-                           </div>
-                       </div>
-          
-                      `
+                    <div class="col-md-6">
+                        <div class="card mb-6 shadow-sm">
+                            <a title="producto" href="product-info.html"><img src="` + imagen + `" alt=" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></a>
+                            <div class="card-body">
+                                <h4 class="card-text">`+ nombre + `</h4>
+                                <p>` + moneda + " " + costo + `</p> 
+                                <p class="card-text">` + descripcion + `</p>
+                                <p class="card-text">`+ "Cantidad vendida: " + cantvendido + `</p>
+                                 
+                            </div>
+                        </div>
+                    </div> `
+
+            // descendenteprecio += `
+            //       <div class="list-group-item list-group-item-action">
+            //            <div class="row">
+            //                <div class="col-3">
+            //                <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
+            //                </div>
+            //                <div class="col">
+            //                    <div class="d-flex w-100 justify-content-between">
+            //                       <h4 class="mb-1">`+ nombre + `</h4>
+            //                       <small class="text-muted">` + moneda + " " + costo + `</small>
+            //                </div>
+            //                <div><p class="mb-1">` + descripcion + `</p></div>
+            //                <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
+            //                </div>
+            //            </div>
+
+            //           `
             document.getElementById("producto-list-container").innerHTML = descendenteprecio
         }
     });
@@ -210,22 +260,36 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let cantvendido = auto.soldCount;
 
             ascendeteprecio += `
-                  <div class="list-group-item list-group-item-action">
-                       <div class="row">
-                           <div class="col-3">
-                           <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
-                           </div>
-                           <div class="col">
-                               <div class="d-flex w-100 justify-content-between">
-                                  <h4 class="mb-1">`+ nombre + `</h4>
-                                  <small class="text-muted">` + moneda + " " + costo + `</small>
-                           </div>
-                           <div><p class="mb-1">` + descripcion + `</p></div>
-                           <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
-                           </div>
-                       </div>
+                <div class="col-md-6">
+                    <div class="card mb-6 shadow-sm">
+                        <a title="producto" href="product-info.html"><img src="` + imagen + `" alt=" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></a>
+                        <div class="card-body">
+                            <h4 class="card-text">`+ nombre + `</h4>
+                            <p>` + moneda + " " + costo + `</p> 
+                            <p class="card-text">` + descripcion + `</p>
+                            <p class="card-text">`+ "Cantidad vendida: " + cantvendido + `</p>
+                         
+                        </div>
+                    </div>
+                </div> `
+
+            // ascendeteprecio += `
+            //       <div class="list-group-item list-group-item-action">
+            //            <div class="row">
+            //                <div class="col-3">
+            //                <a title="producto" href="product-info.html"><img src="` + imagen + `" alt="` + descripcion + `" class="img-thumbnail"> </a>
+            //                </div>
+            //                <div class="col">
+            //                    <div class="d-flex w-100 justify-content-between">
+            //                       <h4 class="mb-1">`+ nombre + `</h4>
+            //                       <small class="text-muted">` + moneda + " " + costo + `</small>
+            //                </div>
+            //                <div><p class="mb-1">` + descripcion + `</p></div>
+            //                <div><p class="mb-1">`+ "Cantidad vendida: " + cantvendido + `</p></div>
+            //                </div>
+            //            </div>
           
-                      `
+            //           `
             document.getElementById("producto-list-container").innerHTML = ascendeteprecio
         }
 

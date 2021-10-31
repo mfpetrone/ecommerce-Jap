@@ -59,5 +59,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let usuarios = ""
     localStorage.setItem("usuario", usuarios)
     document.getElementById("usuariologueado").innerHTML = usuarios
+    localStorage.removeItem('guardadatos');
+   
+    
   }
 });

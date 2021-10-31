@@ -41,17 +41,59 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> -->
-      <div class="py-2 d-none d-md-inline-block" name= usuario id= usuariologueado style=color:white> </div>
+      <div class="py-2 d-none d-md-inline-block" name=usuario id=usuariologueado style=color:white> </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="text-center p-4">
+    <h2>Mi perfil</h2>
+    <p class="lead">Se ve mis datos actuales.</p>
+  </div>
+  <!--agrego divs e input para que puedan completar los datos -->
+  <div>
+   
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <label> Primer Nombre:</label>
+        <input type="text" class="form-control" id="primernombre" placeholder="" value="">
+      </div>
+      <div class="col-md-5 mb-3">
+        <label> Segundo Nombre:</label>
+        <input type="text" class="form-control" id="segundonombre" placeholder="" value="">
+      </div>
+      <div class="col-md-5 mb-3">
+        <label> Primer Apellido:</label>
+        <input type="text" class="form-control" id="primerapellido" placeholder="" value="">
+      </div>
+      <div class="col-md-5 mb-3" >
+        <label> Segundo Apellido:</label>
+        <input type="text" class="form-control" id="segundoapellido" placeholder="" value="">
+      </div>
+      <div class="col-md-6 mb-3">
+
+        <label> Edad:</label>
+        <input type="number" class="form-control" id="edad" placeholder="" value="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label> E-mail:</label>
+        <input type="text" class="form-control" id="e-mail" placeholder="" value="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label> Teléfono:</label>
+        <input type="number" class="form-control" id="telefono" placeholder="" value="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <button class="btn btn-primary btn-lg" type="submit" id="guardarcambios">Guardar datos</button>
+      </div>
     </div>
   </div>
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

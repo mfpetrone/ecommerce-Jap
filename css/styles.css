@@ -176,3 +176,7 @@ nav ul li ul li a {
 nav ul li ul li a:hover {
   background-color: gray;
 } 
+
+div#producto-list-container {
+  text-align: -webkit-auto;
+}
