@@ -60,4 +60,66 @@ document.addEventListener("DOMContentLoaded", function (e) {
             Array.from(document.querySelectorAll('input[name="deliverytype"]')).map(item => item.addEventListener("change", () => calcular()))
         });
 
+    
+       
+        
+        document.getElementById("credito").onclick = function(){
+             if (document.getElementById("credito").checked){
+            document.getElementById("infotarjeta").style.display = "block";
+            document.getElementById("infobanco").style.display = "none";
+            } 
+        }
+        document.getElementById("banco").onclick = function(){
+            if (document.getElementById("banco").checked){
+           document.getElementById("infobanco").style.display = "block";
+           document.getElementById("infotarjeta").style.display = "none";
+           } 
+        }
+ 
+    function habilitar() {
+        let ntarjeta = document.getElementById("numerotarjeta").value
+        
+        let codseguridad = document.getElementById("codseguridad").value
+        let vencimiento = document.getElementById("vencimiento").value
+        let cuenta = document.getElementById("numerocuenta").value
+        
+        if (document.getElementById("credito").checked ||document.getElementById("banco").checked){
+            if(ntarjeta.length != 0 && codseguridad.length != 0 && vencimiento.length != 0 || cuenta.length != 0){
+                document.getElementById("guardar").disabled = false 
+            }   
+        } 
+          else{
+            document.getElementById("guardar").disabled = true 
+            }
+    }
+    document.getElementById("numerotarjeta").addEventListener("keyup",habilitar)
+    document.getElementById("codseguridad").addEventListener("keyup",habilitar)
+    document.getElementById("vencimiento").addEventListener("keyup",habilitar)
+    document.getElementById("numerocuenta").addEventListener("keyup",habilitar)
+    document.getElementById("guardar").addEventListener("click",() => {alert("Medio de pago válido")})
+
+    document.getElementById("comprar").onclick = function (){
+        let pais = document.getElementById("pais").value
+        let calle = document.getElementById("calle").value
+        let npuerta = document.getElementById("npuerta").value
+      
+
+        if(pais.length == 0 ){ alert("Ingresar el pais")
+
+        }
+          if(calle.length == 0 ){ alert("Ingresar la calle")
+
+        }
+          if(npuerta.length == 0 ){ alert("Ingresar el N° de puerta")
+
+        }
+          if(!document.getElementById("credito").checked && !document.getElementById("banco").checked){ alert("Debe indicar medio de pago")}
+        
+        if(pais.length !=0 && calle.length !=0 && npuerta.length != 0 && (document.getElementById("credito").checked || document.getElementById("banco").checked )){
+            alert("Compra realizada con éxito")
+        }
+        
+     }
+        
+
 });

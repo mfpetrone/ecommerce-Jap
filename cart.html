@@ -3,7 +3,8 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,7 +43,7 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="py-2 d-none d-md-inline-block" name= usuario id= usuariologueado style=color:white> </div>
+      <div class="py-2 d-none d-md-inline-block" name=usuario id=usuariologueado style=color:white> </div>
     </div>
   </nav>
   <div class="text-center p-4">
@@ -62,7 +63,8 @@
     <h5 class="mb-3">Tipo de envío</h5>
     <div class="d-block my-3">
       <div class="custom-control custom-radio">
-        <input id="premiumradio" name="deliverytype" type="radio" class="custom-control-input" required="" checked="" value="0.15">
+        <input id="premiumradio" name="deliverytype" type="radio" class="custom-control-input" required="" checked=""
+          value="0.15">
         <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
       </div>
       <div class="custom-control custom-radio">
@@ -70,7 +72,8 @@
         <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
       </div>
       <div class="custom-control custom-radio">
-        <input id="standardradio" name="deliverytype" type="radio" class="custom-control-input" required="" value="0.05">
+        <input id="standardradio" name="deliverytype" type="radio" class="custom-control-input" required=""
+          value="0.05">
         <label class="custom-control-label" for="standardradio">Estándar 12 a 15 días (5%)</label>
       </div>
     </div>
@@ -79,38 +82,106 @@
     <div class="d-block my-3">
       <table width=75%>
         <tr>
+          <td>País:</td>
           <td>Calle:</td>
           <td>N° de puerta:</td>
+
         </tr>
         <tr>
-          <td><input type="text"></td>  
-          <td><input type="text"></td>
+          <td><input type="text" id="pais" required=""></td>
+          <td><input type="text" id="calle" required=""></td>
+          <td><input type="number" id="npuerta" required=""></td>
         </tr>
       </table>
     </div>
+    
+      <hr class="mb-4">
+      <h4 class="mb-3">Costo Total</h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Costo de los productos seleccionados</h6>
+            <small class="text-muted">Costo de productos</small>
+          </div>
+          <span class="text-muted" id="costoproducto">-</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Costo de envío</h6>
+            <small class="text-muted">Según el tipo de envío seleccionado</small>
+          </div>
+          <span class="text-muted" id="costoenvio">-</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total ($)</span>
+          <strong id="total">-</strong>
+        </li>
+      </ul>
 
-  <hr class="mb-4">
-              <h4 class="mb-3">Costo Total</h4>
-              <ul class="list-group mb-3">
-                  <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                      <h6 class="my-0">Costo de los productos seleccionados</h6>
-                      <small class="text-muted">Costo de productos</small>
-                    </div>
-                    <span class="text-muted" id="costoproducto">-</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                      <h6 class="my-0">Costo de envío</h6>
-                      <small class="text-muted">Según el tipo de envío seleccionado</small>
-                    </div>
-                    <span class="text-muted" id="costoenvio">-</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between">
-                    <span>Total ($)</span>
-                    <strong id="total">-</strong>
-                  </li>
-                </ul>
+      <div class="row">
+        <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">
+          <h6>Seleccionar método de pago</h6>
+        </button>
+      </div>
+      <div class="modal fade" tabhome="-1" role="dialog" id="contidionsModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Formas de pago</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-block my-3">
+
+                <div class="custom-control custom-radio">
+                  <input id="credito" name="formadepago" type="radio" class="custom-control-input"  required="">
+                  <label class="custom-control-label" for="credito">Tarjeta de Crédito</label>
+                </div>
+                <div class="col-md-6" id="infotarjeta" style="display: none;" >
+                  <label for="numerotarjeta">Número de tarjeta:</label>
+                  <input type="number" class="form-control" id="numerotarjeta" placeholder="" required="" value="">
+                  <label for="codigoseguridad">Código de Seguridad:</label>
+                  <input type="number" class="form-control" id="codseguridad" placeholder="" required="" value="">
+                  <label for="vencimiento">Vencimiento (MM/AA):</label>
+                  <input type="number" class="form-control" id="vencimiento" placeholder="" required="" value="">
+                </div>
+                <hr>
+                <div class="custom-control custom-radio">
+                  <input type="radio"  class="custom-control-input" id="banco" name="formadepago" required="">
+                  <label class="custom-control-label" for="banco">Transferencia Bancaria</label>
+                </div>
+                <div class="col-md-6" id="infobanco" style="display: none;">
+                    <label for="numerocuenta">Número de cuenta</label>
+                    <input type="number" class="form-control" id="numerocuenta" placeholder="" required="" value="">
+                </div>
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardar" disabled> Guardar y cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="col-md-6 mb-3">
+    <button class="btn btn-primary btn-lg" type="submit" id="comprar">Finalizar compra</button>
+  </div>
+  
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
